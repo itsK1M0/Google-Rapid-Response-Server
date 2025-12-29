@@ -266,7 +266,7 @@ Since the script is included in this repository, simply clone the repository:
 
 ```bash
 git clone https://github.com/itsK1M0/Google-Rapid-Response-Server.git
-cd <your-repository>
+cd Google-Rapid-Response-Server
 ```
 
 #### Make the sccript Executable :

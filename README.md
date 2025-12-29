@@ -425,13 +425,3 @@ Your GRR Rapid Response server is now fully operational! You can:
 This guide is for educational and authorized testing purposes. Ensure compliance with organizational policies and legal requirements before deploying in production environments.
 
 ---
-
-## 🖼️ Recommended Screenshots for Documentation
-
-1. **GRR Admin UI Dashboard** - Main interface showing connected clients
-2. **MySQL Configuration** - Showing database setup
-3. **Service Status** - All three services running
-4. **Client Approval Screen** - Pending clients in Admin UI
-5. **Successful Hunt Results** - First hunt execution results
-6. **Network Diagram** - Architecture overview
-7. **Command Line Installation** - Key installation steps

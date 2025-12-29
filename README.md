@@ -176,7 +176,7 @@ This section describes the simplest method to make GRR client installers availab
 
 ### 🚀 Quick Method: Python Built-in HTTP Server 
 
-## On GRR server Navigate to the installers directory:
+#### On GRR server Navigate to the installers directory:
 
 ```bash
 cd /usr/share/grr-server/executables/installers
@@ -187,7 +187,7 @@ Start the HTTP server on port 8080:
 sudo python3 -m http.server 8080
 ```
 
-## Access from Anywhere:
+#### Access from Anywhere:
 Open a web browser on any machine in your network and navigate to:
 
 ```bash
@@ -238,34 +238,51 @@ Clients automatically register with the server using the configuration set durin
 
 ## 🛠️ Service Management
 
-### 13. Proper Service Shutdown Procedure
+### 13. Automated GRR Service Shutdown & Status Script
 
-⚠️ **Always follow this order:**
+To avoid manual mistakes and ensure a clean shutdown sequence, this repository includes a script that automatically:
 
-```bash
-sudo systemctl stop grr-server
-sudo systemctl stop fleetspeak-server
-sudo systemctl stop mysql
-sudo poweroff
-```
+- Stops GRR services in the correct order  
+- Prevents database corruption  
+- Displays the status of all services after execution
 
-🔍 **Why this order?**  
-Prevents database corruption and ensures clean shutdown of GRR services.
+#### What the Script Does
 
-### 14. Service Status Checking
+The script performs the following actions in order:
 
-```bash
-# Check all services
-sudo systemctl status mysql
-sudo systemctl status fleetspeak-server
-sudo systemctl status grr-server
+1. Stops `grr-server`
+2. Stops `fleetspeak-server`
+3. Stops `mysql`
+4. Displays the status of all services
+5. Safely powers off the system
 
-# View logs
-sudo journalctl -u grr-server -f
-sudo journalctl -u fleetspeak-server -f
-```
+⚠️ **The shutdown order is critical** to ensure data integrity and avoid MySQL corruption.
 
 ---
+
+#### Download the Script
+
+Since the script is included in this repository, simply clone the repository:
+
+```bash
+git clone https://github.com/itsK1M0/Google-Rapid-Response-Server.git
+cd <your-repository>
+```
+
+#### Make the sccript Executable :
+
+```bash
+chmod +x shutdown_grr.sh
+```
+
+#### Run the script :
+
+Execute the script with root privileges:
+
+```bash
+sudo ./shutdown_grr.sh
+```
+After execution, the script will display the status of all services so you can immediately verify that everything was stopped correctly before shutdown.
 
 ## 🔐 SSH Access for Remote Management (Optional)
 

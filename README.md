@@ -419,8 +419,3 @@ Your GRR Rapid Response server is now fully operational! You can:
 - [GRR Community Discussions](https://groups.google.com/g/grr-users)
 
 ---
-
-**⚠️ Security Disclaimer:**  
-This guide is for educational and authorized testing purposes. Ensure compliance with organizational policies and legal requirements before deploying in production environments.
-
----

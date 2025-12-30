@@ -254,7 +254,6 @@ The script performs the following actions in order:
 2. Stops `fleetspeak-server`
 3. Stops `mysql`
 4. Displays the status of all services
-5. Safely powers off the system
 
 ⚠️ **The shutdown order is critical** to ensure data integrity and avoid MySQL corruption.
 

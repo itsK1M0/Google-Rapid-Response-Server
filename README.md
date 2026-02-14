@@ -357,6 +357,5 @@ Your GRR Rapid Response server is now fully operational! You can:
 - [GRR Official Documentation](https://grr-doc.readthedocs.io/)
 - [GRR GitHub Repository](https://github.com/google/grr)
 - [Fleetspeak Documentation](https://github.com/google/fleetspeak)
-- [GRR Community Discussions](https://groups.google.com/g/grr-users)
 
 ---

@@ -142,7 +142,7 @@ Successfully connected to MySQL with the provided details.
 - Frontend URL [http://[YOUR_SERVER_IP]:8000/] : **PRESS_ENTER**
 
 #### -=Email Configuration=-:
-- Email settings: Configure according to your environment or skip it by **PRESSING ENTER**
+- Email settings: Configure according to your environment or skip it by **PRESS ENTER**
 
 #### -=Admin Account=-:
 Adding GRR Admin User
@@ -283,38 +283,9 @@ sudo ./shutdown_grr.sh
 ```
 After execution, the script will display the status of all services so you can immediately verify that everything was stopped correctly before shutdown.
 
-## 🔐 SSH Access for Remote Management (Optional)
-
-### 15. Enable SSH Server
-
-**Method 1: During Ubuntu Installation**  
-- Check "OpenSSH server" option during OS installation
-
-**Method 2: Post-Installation**
-
-```bash
-# Install SSH server
-sudo apt install openssh-server
-
-# Start and enable SSH
-sudo systemctl start ssh
-sudo systemctl enable ssh
-
-# Verify status
-sudo systemctl status ssh
-```
-
-### 16. Connect from Host Machine
-
-```bash
-ssh username@SERVER_IP
-```
-
----
-
 ## 🎯 Access & Verification
 
-### 17. Access GRR Admin Interface
+### 14. Access GRR Admin Interface
 
 - URL: `http://[YOUR_SERVER_IP]:8000`
 - Username: **admin**
@@ -327,36 +298,6 @@ ssh username@SERVER_IP
 3. **Test Client Connection:** Install a client and verify it appears in the Admin UI
 4. **Run First Hunt:** Create a simple file find hunt to test functionality
 
----
-
-## 📊 Post-Installation Configuration
-
-### 19. Configure Email Notifications (Optional)
-
-```bash
-# Edit GRR config
-sudo vi /etc/grr/server.local.yaml
-
-# Add email configuration
-Email.from_address: "grr@yourdomain.com"
-Email.smtp_server: "smtp.yourdomain.com"
-Email.smtp_port: 587
-Email.smtp_username: "username"
-Email.smtp_password: "password"
-```
-
-### 20. Enable SSL/TLS (Production)
-
-```bash
-# Generate certificates or use Let's Encrypt
-sudo apt install certbot python3-certbot-nginx
-
-# Configure Nginx as reverse proxy
-sudo apt install nginx
-# Configure Nginx to proxy to GRR on ports 8000/8080 with SSL
-```
-
----
 
 ## 🚨 Troubleshooting Common Issues
 
